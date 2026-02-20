@@ -680,7 +680,7 @@ footer {
 }
 
 /* Móvil pequeño */
-@media (max-width: 40px) {
+@media (max-width: 480px) {
   .page-wrap {
     padding: 10px 8px 40px;
   }
