@@ -1,0 +1,695 @@
+/* ===== PALETA ===== */
+:root {
+  --bg-body: #031b2a;
+  --bg-header: #063b5b;
+  --bg-card: #041f30;
+  --accent: #19b6ff;
+  --accent-soft: #0b5d86;
+  --accent-gold: #ffbf3b;
+  --text-main: #f4f8ff;
+}
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  font-family: "Playfair Display", serif;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===== CONTENEDOR ===== */
+.page-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 15px 60px;
+}
+
+/* ===== HEADER ===== */
+.top-header {
+  background-color: var(--bg-header);
+  border-radius: 6px 6px 0 0;
+  padding: 14px 25px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--accent);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffffff 0, #2da6ff 45%, #02101b 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.logo-title {
+  font-family: "UnifrakturCook", cursive;
+  font-size: 34px;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+/* NAV PRINCIPAL */
+.main-nav {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.main-nav a {
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--accent-soft);
+  background-color: #021626;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  transition: background-color .25s ease, color .25s ease, box-shadow .25s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  background-color: var(--accent);
+  color: #021626;
+  box-shadow: 0 0 0 2px rgba(25,182,255,0.7);
+}
+
+/* BUSCADOR */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #021626;
+  padding: 6px 10px 6px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-soft);
+}
+
+.search-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-main);
+  font-size: 14px;
+  width: 130px;
+}
+
+.search-box button {
+  border: none;
+  outline: none;
+  background-color: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: "Playfair Display", serif;
+}
+
+/* ===== MAIN ABOUT ===== */
+.about-main {
+  background-color: var(--bg-body);
+  padding: 25px 25px 30px;
+}
+
+/* ===== TEAM SECTION ===== */
+.team-section {
+  text-align: center;
+  margin-bottom: 60px;
+  min-height: calc(100vh - 220px); /* casi toda la pantalla */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.team-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #4fd0ff;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.team-subtitle {
+  font-size: 14px;
+  color: #d4e9ff;
+  margin-bottom: 22px;
+}
+
+/* ocultar radios */
+.team-section input[type="radio"] {
+  display: none;
+}
+
+/* carrusel centrado y grande */
+.team-slider {
+  position: relative;
+  max-width: 1000px;
+  margin: 10px auto 0;
+  height: min(70vh, 520px); /* alto grande, adaptado a pantalla */
+}
+
+/* Tarjetas base */
+.team-card {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 280px;
+  height: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 3px solid transparent;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  transform: translateX(-50%) scale(.85);
+  opacity: .4;
+  transition:
+    transform .6s ease,
+    opacity .6s ease,
+    border-color .6s ease,
+    box-shadow .6s ease;
+}
+
+.team-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* nombres */
+.team-name {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  right: 12px;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 20px;
+  text-shadow: 0 0 8px rgba(0,0,0,0.9);
+}
+
+.team-name.center {
+  text-align: center;
+}
+/* .team-name.right {
+  text-align: right;
+} */
+
+/* overlay descripción */
+.team-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.85));
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity .35s ease;
+  text-align: center;
+}
+
+.team-card:hover .team-overlay {
+  opacity: 1;
+}
+
+/* offsets horizontales */
+:root {
+  --card-offset: 320px;
+}
+
+/* Estado 1: Karin centro */
+#team-1:checked ~ .team-slider .card1 {
+  transform: translateX(calc(-50% - var(--card-offset))) scale(.9);
+  opacity: .7;
+}
+#team-1:checked ~ .team-slider .card2 {
+  transform: translateX(-50%) scale(1.08);
+  opacity: 1;
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 26px rgba(255,191,59,0.6);
+}
+#team-1:checked ~ .team-slider .card3 {
+  transform: translateX(calc(-50% + var(--card-offset))) scale(.9);
+  opacity: .7;
+}
+
+/* Estado 2: Jesús centro */
+#team-2:checked ~ .team-slider .card2 {
+  transform: translateX(calc(-50% - var(--card-offset))) scale(.9);
+  opacity: .7;
+}
+#team-2:checked ~ .team-slider .card3 {
+  transform: translateX(-50%) scale(1.08);
+  opacity: 1;
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 26px rgba(255,191,59,0.6);
+}
+#team-2:checked ~ .team-slider .card1 {
+  transform: translateX(calc(-50% + var(--card-offset))) scale(.9);
+  opacity: .7;
+}
+
+/* Estado 3: Dhenilsson centro */
+#team-3:checked ~ .team-slider .card3 {
+  transform: translateX(calc(-50% - var(--card-offset))) scale(.9);
+  opacity: .7;
+}
+#team-3:checked ~ .team-slider .card1 {
+  transform: translateX(-50%) scale(1.08);
+  opacity: 1;
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 26px rgba(255,191,59,0.6);
+}
+#team-3:checked ~ .team-slider .card2 {
+  transform: translateX(calc(-50% + var(--card-offset))) scale(.9);
+  opacity: .7;
+}
+
+/* puntos del slider */
+.slider-dots {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.slider-dots label {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  cursor: pointer;
+  transition: background-color .25s ease, transform .25s ease;
+}
+
+/* activo */
+#team-1:checked ~ .slider-dots label:nth-child(1),
+#team-2:checked ~ .slider-dots label:nth-child(2),
+#team-3:checked ~ .slider-dots label:nth-child(3) {
+  background-color: var(--accent);
+  transform: scale(1.2);
+}
+
+/* ===== SECTION IMPULSA TU NEGOCIO ===== */
+.business-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 24px;
+}
+
+/* Caja del formulario con animación suave de pulso */
+.business-form {
+  background-color: var(--bg-card);
+  border-radius: 10px;
+  border: 2px solid var(--accent-soft);
+  padding: 20px 22px 24px;
+  animation: pulseBox 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes pulseBox {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.02); }
+}
+
+/* Título del formulario */
+.form-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Formulario */
+.business-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.field-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+.field-label span {
+  font-size: 14px;
+  color: #eaf5ff;
+}
+
+/* inputs y textarea */
+.business-form input,
+.business-form textarea {
+  background-color: #0a71b5;
+  border: 1px solid #02446e;
+  border-radius: 4px;
+  padding: 8px 10px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.business-form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.send-btn {
+  margin-top: 4px;
+  align-self: flex-start;
+  background-color: #15a7f5;
+  border: 1px solid #02446e;
+  border-radius: 4px;
+  padding: 8px 20px;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: inherit;
+  text-transform: uppercase;
+}
+
+/* ===== EFECTO DE ESCRITURA (TYPEWRITER) ===== */
+.typing {
+  display: inline-block;
+  overflow: hidden;
+  /* border-right: 2px solid rgba(255,255,255,0.8); */
+  white-space: nowrap;
+  /* todos escriben al mismo tiempo y en loop infinito */
+  animation:
+    typing 3s steps(40, end) infinite,
+    caretBlink .2s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* @keyframes caretBlink {
+  0%, 100% { border-color: transparent; }
+  50%      { border-color: rgba(255,255,255,0.8); }
+} */
+
+/* Para textos largos (labels y negocios) dejamos que salten de línea y sin cursor */
+.business-testimonials .biz-card {
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    border: 2px solid var(--accent-soft);
+    padding: 16px 18px;
+    text-align: left;
+    animation: pulseCard 2s ease-in-out infinite;
+    min-height: 150px;      /* más alto para que quepa bien el texto */
+  }
+  
+  @keyframes pulseCard {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.01); }
+  }
+  
+  .biz-card h4,
+  .biz-card p {
+    display: block;
+    overflow: hidden;       /* importante para el clip */
+    font-size: 13px;
+  }
+
+  /* ===== TYPEWRITER PARA NEGOCIOS ===== */
+/* Usamos clip-path para revelar el texto de izquierda a derecha
+   sin romper los saltos de línea. Empiezan vacíos. */
+
+.typing-biz-title,
+.typing-biz-text {
+  position: relative;
+  clip-path: inset(0 100% 0 0);   /* todo oculto al inicio */
+}
+
+/* títulos: un poco más rápidos */
+.typing-biz-title {
+  animation: bizTypingTitle 2s steps(20, end) infinite;
+}
+
+/* textos: más lentos, se siente palabra por palabra */
+.typing-biz-text {
+  margin-top: 4px;
+  animation: bizTypingText 2s steps(40, end) infinite;
+}
+
+@keyframes bizTypingTitle {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes bizTypingText {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+/* typewriter para negocios */
+.typing-biz-title1 {
+  animation:
+    typing 2.4s steps(20, end) 18s forwards,
+    caretBlink .8s step-end infinite 18s;
+}
+.typing-biz-text1 {
+  animation:
+    typing 3.2s steps(40, end) 20.6s forwards,
+    caretBlink .8s step-end infinite 20.6s;
+}
+.typing-biz-title2 {
+  animation:
+    typing 2.4s steps(18, end) 24.4s forwards,
+    caretBlink .8s step-end infinite 24.4s;
+}
+.typing-biz-text2 {
+  animation:
+    typing 3.2s steps(38, end) 27s forwards,
+    caretBlink .8s step-end infinite 27s;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: var(--bg-header);
+  border-radius: 0 0 6px 6px;
+  padding: 18px 25px 14px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.2fr;
+  gap: 18px;
+  align-items: center;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+.footer-title {
+  font-family: "UnifrakturCook", cursive;
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.nav-bottom {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.nav-bottom a {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background-color: #021626;
+  border: 1px solid var(--accent-soft);
+  transition: background-color .25s ease, color .25s ease, box-shadow .25s ease;
+  font-size: 13px;
+}
+
+.nav-bottom a:hover {
+  background-color: var(--accent);
+  color: #021626;
+  box-shadow: 0 0 0 2px rgba(25,182,255,0.7);
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.social-icons {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.social-badge {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #021626;
+  border: 1px solid var(--accent-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.social-text {
+  font-size: 12px;
+}
+
+.copyright {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 8px;
+  font-size: 11px;
+  opacity: .7;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablets */
+@media (max-width: 1000px) {
+    .about-main {
+      padding: 20px 18px 26px;
+    }
+  
+    /* En tablet ya no obligamos a ocupar casi toda la altura */
+    .team-section {
+      min-height: auto;
+      margin-bottom: 50px;    /* menos espacio antes del formulario */
+    }
+  
+    :root {
+      --card-offset: 240px;   /* un poco menos separadas */
+    }
+  
+    .team-slider {
+      height: 420px;
+    }
+  
+    .business-section {
+      grid-template-columns: 1fr;
+      margin-top: 10px;
+    }
+  }
+
+
+/* Móvil grande */
+@media (max-width: 768px) {
+  .top-header {
+    /* flex-direction: column; */
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .header-right {
+    align-items: flex-end;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    
+  }
+
+  .team-slider {
+    position: relative;
+    max-width: 1000px;
+    margin: 10px auto 0;
+    height: min(70vh, 520px);
+  }
+  
+  /* separación lateral en escritorio */
+  :root {
+    --card-offset: 320px;
+  }
+  
+  /* estado base de TODAS las tarjetas */
+  .team-card {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 280px;
+    height: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 3px solid transparent;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    transform: translateX(-50%) scale(.85);
+    opacity: .4;
+    z-index: 1;
+    transition:
+      transform .6s ease,
+      opacity .6s ease,
+      border-color .6s ease,
+      box-shadow .6s ease,
+      z-index .6s ease;
+  }
+
+  #team-1:checked ~ .team-slider .card2,
+  #team-2:checked ~ .team-slider .card3,
+  #team-3:checked ~ .team-slider .card1 {
+    transform: translateX(-50%) scale(1.04);
+    opacity: 1;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 480px) {
+  .page-wrap {
+    padding: 10px 8px 40px;
+  }
+
+  .about-main {
+    padding: 16px 10px 22px;
+  }
+
+  .business-form {
+    padding: 16px 14px 20px;
+  }
+}

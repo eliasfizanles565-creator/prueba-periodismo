@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>El Observador - Nosotros</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos de la página Nosotros -->
+  <link rel="stylesheet" href="nosotros.css">
+</head>
+<body>
+  <div class="page-wrap">
+
+    <!-- HEADER (IGUAL AL ANTERIOR) -->
+    <header class="top-header">
+      <div class="logo">
+        <div class="logo-icon">🌍</div>
+        <div class="logo-title">El Observador</div>
+      </div>
+
+      <div class="header-right">
+        <nav class="main-nav">
+          <a href="index.html">Inicio</a>
+          <a href="nosotros.html" class="active">Nosotros</a>
+          <!-- <a href="#">Internacional</a> -->
+        </nav>
+
+        <div class="search-box">
+          <input type="text" placeholder="Buscar">
+          <button>BUSCAR</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- PORTADA EQUIPO -->
+    <main class="about-main">
+      <section class="team-section">
+        <h2 class="team-title">CONOCE A NUESTRO EQUIPO</h2>
+        <p class="team-subtitle">
+          Las mentes curiosas y apasionadas que hacen posible El Observador cada día.
+        </p>
+
+        <!-- Radios para controlar el slider solo con CSS -->
+        <input type="radio" name="team-slider" id="team-1" checked>
+        <input type="radio" name="team-slider" id="team-2">
+        <input type="radio" name="team-slider" id="team-3">
+
+        <div class="team-slider">
+          <!-- Tarjeta 1 -->
+          <article class="team-card card1">
+            <img src="img/10 dhenisson.png" alt="Dhenilsson Rosillo">
+            <div class="team-name">Dhenilsson Rosillo</div>
+            <div class="team-overlay">
+              <p>
+                Dhenilsson es el responsable de nuestra coordinación y trabajo en equipo.
+                Su experiencia en gestión hace que todo fluya y que cada edición llegue a tiempo.
+              </p>
+            </div>
+          </article>
+
+          <!-- Tarjeta 2 -->
+          <article class="team-card card2">
+            <img src="img/09 karin.jpg" alt="Karin Sotelo">
+            <div class="team-name center">Karin Sotelo</div>
+            <div class="team-overlay">
+              <p>
+                Karin es la mente detrás de nuestra organización. Nos ayuda a mantener
+                un trabajo ordenado, creativo y alineado con la visión de El Observador.
+              </p>
+            </div>
+          </article>
+
+          <!-- Tarjeta 3 -->
+          <article class="team-card card3">
+            <img src="img/11 jesus.png" alt="Jesús Rosales">
+            <div class="team-name right">Jesús Rozales</div>
+            <div class="team-overlay">
+              <p>
+                Jesús nos inspira con ideas innovadoras y es el responsable de nuestra
+                identidad visual, aportando imágenes y contenido de alta calidad.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Puntos para cambiar de tarjeta -->
+        <div class="slider-dots">
+          <label for="team-1"></label>
+          <label for="team-2"></label>
+          <label for="team-3"></label>
+        </div>
+      </section>
+
+      <!-- SECCIÓN IMPULSA TU NEGOCIO -->
+      <section class="business-section">
+        <div class="business-form">
+          <h3 class="form-title typing typing-1">Impulsa tu negocio</h3>
+
+          <form>
+            <label class="field-label">
+              <span class="typing typing-2">Nombre</span>
+              <input type="text" name="nombre" placeholder="">
+            </label>
+
+            <label class="field-label">
+              <span class="typing typing-3">Celular</span>
+              <input type="tel" name="celular" placeholder="">
+            </label>
+
+            <label class="field-label">
+              <span class="typing typing-4">Email</span>
+              <input type="email" name="email" placeholder="">
+            </label>
+
+            <label class="field-label">
+              <span class="typing typing-5">Tu mensaje...</span>
+              <textarea name="mensaje"></textarea>
+            </label>
+
+            <button type="submit" class="send-btn typing typing-6">Enviar</button>
+          </form>
+        </div>
+
+        <div class="business-testimonials">
+            <article class="biz-card">
+              <h4 class="typing-biz-title">Licorería "El Búho"</h4>
+              <p class="typing-biz-text">
+                “Colocaron mi página junto con la sección de los tragos que fueron mejor
+                catalogados del año pasado. Desde entonces no dejan de hacer pedidos.
+                Simplemente agradecido.”
+              </p>
+            </article>
+          
+            <article class="biz-card">
+              <h4 class="typing-biz-title">Asami Tech</h4>
+              <p class="typing-biz-text">
+                “Pusieron mi negocio en la sección de novedades tecnológicas y eso nos
+                dio el impulso que necesitábamos. ‘El Observador’ supo contar nuestra historia.”
+              </p>
+            </article>
+          </div>
+      </section>
+    </main>
+
+    <!-- FOOTER (IGUAL AL ANTERIOR) -->
+    <footer>
+      <div>
+        <div class="footer-title">El Observador Noticias</div>
+        <div class="nav-bottom">
+          <a href="index.html">Inicio</a>
+          <a href="nosotros.html">Nosotros</a>
+          <a href="#">Contacto</a>
+        </div>
+      </div>
+
+      <div class="social">
+        <strong>Síguenos</strong>
+        <div class="social-icons">
+          <span class="social-badge">f</span>
+          <span class="social-badge">X</span>
+          <span class="social-badge">▶</span>
+          <span class="social-badge">IG</span>
+          <span class="social-badge">✉</span>
+        </div>
+      </div>
+
+      <div class="social">
+        <strong>Publica tu Página Web</strong>
+        <div class="social-text">
+          el_observador@gmail.com
+        </div>
+      </div>
+
+      <div class="copyright">
+        Copyright © 2026 El Observador Noticias. All rights reserved.
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
