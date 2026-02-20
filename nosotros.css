@@ -14,6 +14,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;   /* evita espacio lateral / scroll horizontal */
+
 }
 
 body {
@@ -22,6 +28,12 @@ body {
   font-family: "Playfair Display", serif;
   line-height: 1.5;
 }
+
+.page-wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 
 a {
   text-decoration: none;
@@ -615,69 +627,82 @@ footer {
   }
 
 
-/* Móvil grande */
-@media (max-width: 768px) {
-  .top-header {
-    /* flex-direction: column; */
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .header-right {
-    align-items: flex-end;
-  }
-
-  .main-nav {
-    flex-wrap: wrap;
-    
-  }
-
-  .team-slider {
-    position: relative;
-    max-width: 1000px;
-    margin: 10px auto 0;
-    height: min(70vh, 520px);
-  }
+  /* Móvil grande (hasta 768px) */
+  @media (max-width: 768px) {
+    .top-header {
+      align-items: flex-start;
+      gap: 10px;
+    }
   
-  /* separación lateral en escritorio */
-  :root {
-    --card-offset: 320px;
-  }
+    .header-right {
+      align-items: flex-end;
+    }
   
-  /* estado base de TODAS las tarjetas */
-  .team-card {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 280px;
-    height: 100%;
-    border-radius: 18px;
-    overflow: hidden;
-    border: 3px solid transparent;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    transform: translateX(-50%) scale(.85);
-    opacity: .4;
-    z-index: 1;
-    transition:
-      transform .6s ease,
-      opacity .6s ease,
-      border-color .6s ease,
-      box-shadow .6s ease,
-      z-index .6s ease;
+    .main-nav {
+      flex-wrap: wrap;
+    }
+  
+    /* Carrusel: una sola tarjeta grande, centrada */
+    .team-section {
+      margin-bottom: 30px;
+    }
+  
+    .team-slider {
+      position: relative;
+      max-width: 100%;
+      margin: 10px auto 0;
+      height: min(70vh, 520px);
+    }
+  
+    /* En móvil NO usamos offset lateral ni 3 tarjetas visibles */
+    .team-card {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 85vw;                 /* ocupa casi todo el ancho */
+      height: 100%;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 3px solid transparent;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      transform: translateX(-50%) scale(.95);
+      opacity: 0;                  /* base: ocultas */
+      z-index: 1;
+      transition:
+        transform .6s ease,
+        opacity .6s ease,
+        border-color .6s ease,
+        box-shadow .6s ease,
+        z-index .6s ease;
+    }
+  
+    /* Sólo la tarjeta seleccionada se muestra */
+    #team-1:checked ~ .team-slider .card1,
+    #team-2:checked ~ .team-slider .card2,
+    #team-3:checked ~ .team-slider .card3 {
+      opacity: 1;
+      transform: translateX(-50%) scale(1.02);
+      border-color: var(--accent-gold);
+      box-shadow: 0 0 26px rgba(255,191,59,0.8);
+      z-index: 3;
+    }
+  
+    /* LOS PUNTITOS siguen igual, sólo ajustamos un poco el margen */
+    .slider-dots {
+      margin-top: 10px;
+    }
+  
+    /* Formulario y negocios: una sola columna debajo */
+    .business-section {
+      grid-template-columns: 1fr;
+      margin-top: 10px;
+    }
+  
+    footer {
+      grid-template-columns: 1fr;
+      row-gap: 10px;
+    }
   }
-
-  #team-1:checked ~ .team-slider .card2,
-  #team-2:checked ~ .team-slider .card3,
-  #team-3:checked ~ .team-slider .card1 {
-    transform: translateX(-50%) scale(1.04);
-    opacity: 1;
-  }
-
-  footer {
-    grid-template-columns: 1fr;
-    row-gap: 10px;
-  }
-}
 
 /* Móvil pequeño */
 @media (max-width: 480px) {
